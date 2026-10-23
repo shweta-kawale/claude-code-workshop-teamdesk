@@ -320,3 +320,33 @@ body {
     animation: none;
   }
 }
+
+/* Unicorn decoration. Every rule is scoped under .unicorn so Light and Dark
+   are untouched. background-image layers over the utility background-color. */
+.unicorn body {
+  background-image: var(--unicorn-pastel);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* A soft white wash over the rainbow keeps deep plum text above 7:1. */
+.unicorn header {
+  color: var(--foreground);
+  background-image:
+    linear-gradient(oklch(1 0 0 / 0.3), oklch(1 0 0 / 0.3)),
+    var(--unicorn-rainbow);
+}
+
+.unicorn header .nav-link {
+  color: var(--foreground);
+}
+
+.unicorn [data-slot="button"][data-variant="default"] {
+  color: var(--primary-foreground);
+  background-image: var(--unicorn-rainbow);
+}
+
+.unicorn [data-slot="button"][data-variant="default"]:hover:not(:disabled) {
+  filter: brightness(1.06) saturate(1.1);
+}

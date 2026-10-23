@@ -9,7 +9,7 @@ Work the phases in order. Tick each task as it lands, and only start the next ph
 | 1 | Toggle mode plumbing | 5 min | Done |
 | 2 | Persistence and no-flash init | 3 min | Done |
 | 3 | Palette and tokens | 6 min | Done |
-| 4 | Rainbow decoration | 5 min | Not started |
+| 4 | Rainbow decoration | 5 min | Done |
 | 5 | Verify and finish | 6 min | Not started |
 
 ## Phase 1: Toggle mode plumbing
@@ -54,11 +54,11 @@ Exit check: Unicorn shows readable pastel surfaces on Home, About and Notes. No 
 
 Files: `apps/web/src/styles.css`
 
-- [ ] Apply the rainbow gradient to the sticky header, under `.unicorn` only
-- [ ] Apply the rainbow gradient to primary buttons, under `.unicorn` only
-- [ ] Apply the pastel gradient to the page background, under `.unicorn` only
-- [ ] Keep header text dark or add a soft overlay
-- [ ] Confirm no rule leaks into Light or Dark
+- [x] Apply the rainbow gradient to the sticky header, under `.unicorn` only
+- [x] Apply the rainbow gradient to primary buttons, under `.unicorn` only
+- [x] Apply the pastel gradient to the page background, under `.unicorn` only
+- [x] Keep header text dark or add a soft overlay
+- [x] Confirm no rule leaks into Light or Dark
 
 Exit check: rainbow header, rainbow primary buttons and pastel gradient background in Unicorn, with Light and Dark unchanged.
 
