@@ -7,7 +7,7 @@ Work the phases in order. Tick each task as it lands, and only start the next ph
 | Phase | Name | Est. | Status |
 | --- | --- | --- | --- |
 | 1 | Toggle mode plumbing | 5 min | Done |
-| 2 | Persistence and no-flash init | 3 min | Not started |
+| 2 | Persistence and no-flash init | 3 min | Done |
 | 3 | Palette and tokens | 6 min | Not started |
 | 4 | Rainbow decoration | 5 min | Not started |
 | 5 | Verify and finish | 6 min | Not started |
@@ -30,11 +30,11 @@ Exit check: the button cycles Auto, Light, Dark, Unicorn, Auto with the right ic
 
 Files: `apps/web/src/routes/__root.tsx`
 
-- [ ] Update `THEME_INIT_SCRIPT` to accept `unicorn`
-- [ ] Apply the same class and `data-theme` as the toggle
-- [ ] Confirm an unknown stored value falls back to `auto`
-- [ ] Confirm Auto only resolves to light or dark
-- [ ] Confirm `hooks/use-resolved-theme.ts` needs no change
+- [x] Update `THEME_INIT_SCRIPT` to accept `unicorn`
+- [x] Apply the same class and `data-theme` as the toggle
+- [x] Confirm an unknown stored value falls back to `auto`
+- [x] Confirm Auto only resolves to light or dark
+- [x] Confirm `hooks/use-resolved-theme.ts` needs no change
 
 Exit check: reloading in Unicorn mode keeps it with no flash, and Auto, Light and Dark behave as before.
 
