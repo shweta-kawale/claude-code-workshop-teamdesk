@@ -201,14 +201,17 @@
       <div class="cycle">
         <span class="pill">Auto</span>
         &rarr; <span class="pill">Light</span> &rarr;
-        <span class="pill">Dark</span> &rarr;
-        <span class="pill u">Unicorn (sparkle icon)</span> &rarr;
+        <span class="pill">Dark</span>
+        &rarr;
+        <span class="pill u">Unicorn (sparkle icon)</span>
+        &rarr;
         <span class="pill">Auto</span>
       </div>
       <ul>
         <li>
           The choice is stored in <code>localStorage</code> under
-          <code>theme</code> as <code>unicorn</code>.
+          <code>theme</code>
+          as <code>unicorn</code>.
         </li>
         <li>
           The init script in <code>__root.tsx</code> applies it before first
@@ -216,8 +219,9 @@
         </li>
         <li>
           Unicorn keeps the <code>light</code> class and adds
-          <code>unicorn</code> and <code>data-theme="unicorn"</code>. Auto only
-          ever resolves to light or dark.
+          <code>unicorn</code>
+          and <code>data-theme="unicorn"</code>. Auto only ever resolves to
+          light or dark.
         </li>
         <li>Unknown stored values fall back to <code>auto</code>.</li>
       </ul>
@@ -386,7 +390,8 @@
         </li>
         <li>
           The decoration rules sit in a block at the end of
-          <code>styles.css</code> to satisfy the linter's specificity rule.
+          <code>styles.css</code>
+          to satisfy the linter's specificity rule.
         </li>
         <li>
           The <code>.unicorn</code> block also themes popover, secondary, muted,
