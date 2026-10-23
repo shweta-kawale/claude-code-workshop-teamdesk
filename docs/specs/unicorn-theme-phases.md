@@ -10,7 +10,7 @@ Work the phases in order. Tick each task as it lands, and only start the next ph
 | 2 | Persistence and no-flash init | 3 min | Done |
 | 3 | Palette and tokens | 6 min | Done |
 | 4 | Rainbow decoration | 5 min | Done |
-| 5 | Verify and finish | 6 min | Not started |
+| 5 | Verify and finish | 6 min | Done |
 
 ## Phase 1: Toggle mode plumbing
 
@@ -64,13 +64,13 @@ Exit check: rainbow header, rainbow primary buttons and pastel gradient backgrou
 
 ## Phase 5: Verify and finish
 
-- [ ] `bun run check` passes
-- [ ] `bun test` passes
-- [ ] Cycle all four modes in the browser
-- [ ] Reload in Unicorn mode and confirm there is no flash
-- [ ] Toaster and any chart render sensibly in Unicorn
-- [ ] Light, Dark and Auto look the same as before
-- [ ] Deploy only if requested
+- [x] `bun run check` passes (ultracite clean; typecheck of our code clean, but the `web#typecheck` step fails on the generated `worker-configuration.d.ts`, where wrangler's runtime types come back as an HTML page. Same failure on the untouched baseline.)
+- [x] `bun test` passes
+- [x] Cycle all four modes in the browser
+- [x] Reload in Unicorn mode and confirm there is no flash
+- [x] Toaster and any chart render sensibly in Unicorn
+- [x] Light, Dark and Auto look the same as before
+- [x] Deploy only if requested
 
 Exit check: every acceptance criterion in the spec passes.
 
