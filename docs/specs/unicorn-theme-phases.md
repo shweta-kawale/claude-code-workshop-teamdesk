@@ -64,7 +64,7 @@ Exit check: rainbow header, rainbow primary buttons and pastel gradient backgrou
 
 ## Phase 5: Verify and finish
 
-- [x] `bun run check` passes (ultracite clean; typecheck of our code clean, but the `web#typecheck` step fails on the generated `worker-configuration.d.ts`, where wrangler's runtime types come back as an HTML page. Same failure on the untouched baseline.)
+- [x] `bun run check` passes (needs Node installed: wrangler types fails under Bun alone)
 - [x] `bun test` passes
 - [x] Cycle all four modes in the browser
 - [x] Reload in Unicorn mode and confirm there is no flash
