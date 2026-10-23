@@ -1,30 +1,36 @@
-import { Monitor, Moon, Sun } from "lucide-react";
+import { Monitor, Moon, Sparkles, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "#/components/ui/button";
 
-type ThemeMode = "light" | "dark" | "auto";
+type ThemeMode = "light" | "dark" | "auto" | "unicorn";
 
 const NEXT_MODE: Record<ThemeMode, ThemeMode> = {
   auto: "light",
-  dark: "auto",
+  dark: "unicorn",
   light: "dark",
+  unicorn: "auto",
 };
 
 const MODE_LABEL: Record<ThemeMode, string> = {
   auto: "Auto",
   dark: "Dark",
   light: "Light",
+  unicorn: "Unicorn",
 };
 
 const MODE_ICON = {
   auto: Monitor,
   dark: Moon,
   light: Sun,
+  unicorn: Sparkles,
 } as const;
 
 function resolveTheme(mode: ThemeMode, prefersDark: boolean): "light" | "dark" {
   if (mode === "auto") {
     return prefersDark ? "dark" : "light";
+  }
+  if (mode === "unicorn") {
+    return "light";
   }
   return mode;
 }
@@ -35,7 +41,12 @@ function getInitialMode(): ThemeMode {
   }
 
   const stored = window.localStorage.getItem("theme");
-  if (stored === "light" || stored === "dark" || stored === "auto") {
+  if (
+    stored === "light" ||
+    stored === "dark" ||
+    stored === "auto" ||
+    stored === "unicorn"
+  ) {
     return stored;
   }
 
@@ -46,8 +57,11 @@ function applyThemeMode(mode: ThemeMode) {
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const resolved = resolveTheme(mode, prefersDark);
 
-  document.documentElement.classList.remove("light", "dark");
+  document.documentElement.classList.remove("light", "dark", "unicorn");
   document.documentElement.classList.add(resolved);
+  if (mode === "unicorn") {
+    document.documentElement.classList.add("unicorn");
+  }
 
   if (mode === "auto") {
     document.documentElement.removeAttribute("data-theme");
@@ -88,10 +102,8 @@ export default function ThemeToggle() {
     window.localStorage.setItem("theme", nextMode);
   }
 
-  const label =
-    mode === "auto"
-      ? "Theme mode: auto (system). Click to switch to light mode."
-      : `Theme mode: ${mode}. Click to switch mode.`;
+  const nextLabel = MODE_LABEL[NEXT_MODE[mode]].toLowerCase();
+  const label = `Theme mode: ${mode === "auto" ? "auto (system)" : mode}. Click to switch to ${nextLabel} mode.`;
 
   const ModeIcon = MODE_ICON[mode];
 
