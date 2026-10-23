@@ -141,6 +141,63 @@
   --brand-label: oklch(0.7187 0.1122 39.57); /* #e08b6e */
 }
 
+/* Unicorn: pastel pink, lilac and mint on a light base. The root also has
+   .light, so this block sits after it at equal specificity to win. Deep plum
+   text keeps every pair above 4.5:1. */
+.unicorn {
+  --background: oklch(0.9758 0.0124 337.52); /* #fdf4fa */
+  --foreground: oklch(0.2821 0.0534 298.83); /* #2d2340 */
+  --card: oklch(0.9898 0.0066 340.38); /* #fffafd */
+  --card-foreground: oklch(0.2821 0.0534 298.83);
+  --popover: oklch(0.9898 0.0066 340.38);
+  --popover-foreground: oklch(0.2821 0.0534 298.83);
+  --primary: oklch(0.7711 0.1356 349.13); /* #f48fc2 */
+  --primary-foreground: oklch(0.2821 0.0534 298.83);
+  --secondary: oklch(0.932 0.0319 301.58); /* #ece4fb lilac */
+  --secondary-foreground: oklch(0.2821 0.0534 298.83);
+  --muted: oklch(0.9437 0.0235 301.95); /* #efe9fa */
+  --muted-foreground: oklch(0.4981 0.0622 303.49); /* #6a5a80 */
+  --accent: oklch(0.937 0.0389 165.62); /* #d3f3e4 mint */
+  --accent-foreground: oklch(0.2821 0.0534 298.83);
+  --destructive: oklch(0.5289 0.1661 28.5); /* #b8382e */
+  --border: oklch(0.8905 0.0417 315.99); /* #e6d3ee */
+  --input: oklch(0.8905 0.0417 315.99);
+  --ring: oklch(0.6846 0.1397 310.75); /* #b57fd9 */
+  --chart-1: oklch(0.6921 0.1666 349.65); /* #e56bab pink */
+  --chart-2: oklch(0.6524 0.1393 298.14); /* #9b7bd9 lilac */
+  --chart-3: oklch(0.7096 0.1155 164.77); /* #4fb88f mint */
+  --chart-4: oklch(0.7899 0.1155 61.5); /* #f0a96a peach */
+  --chart-5: oklch(0.7431 0.1046 241.46); /* #6cb4e8 sky */
+  --sidebar: oklch(0.9622 0.0191 333.46); /* #fbeef8 */
+  --sidebar-foreground: oklch(0.2821 0.0534 298.83);
+  --sidebar-primary: oklch(0.7711 0.1356 349.13);
+  --sidebar-primary-foreground: oklch(0.2821 0.0534 298.83);
+  --sidebar-accent: oklch(0.932 0.0319 301.58);
+  --sidebar-accent-foreground: oklch(0.2821 0.0534 298.83);
+  --sidebar-border: oklch(0.8905 0.0417 315.99);
+  --sidebar-ring: oklch(0.6846 0.1397 310.75);
+
+  --brand-label: oklch(0.5079 0.1606 345.05); /* #a1357a */
+
+  /* Defined here, applied in a later phase. Stops are soft so dark text
+     stays at 7:1 or better on every one. */
+  --unicorn-rainbow: linear-gradient(
+    90deg,
+    oklch(0.809 0.1247 353.36) 0%,
+    /* #ff9ec7 pink */ oklch(0.8625 0.1003 66.32) 20%,
+    /* #ffc58a peach */ oklch(0.9483 0.1075 99.57) 40%,
+    /* #fff09a butter */ oklch(0.8958 0.094 157.07) 60%,
+    /* #a8f0c4 mint */ oklch(0.8567 0.08 238.79) 80%,
+    /* #9fd8ff sky */ oklch(0.7907 0.1247 299.95) 100% /* #c7a8ff lilac */
+  );
+  --unicorn-pastel: linear-gradient(
+    135deg,
+    oklch(0.9758 0.0124 337.52) 0%,
+    /* #fdf4fa */ oklch(0.9458 0.0303 309.08) 50%,
+    /* #f3e8fd */ oklch(0.9616 0.0201 169.34) 100% /* #e6f7f0 */
+  );
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

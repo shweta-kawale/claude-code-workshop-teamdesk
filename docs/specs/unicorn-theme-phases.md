@@ -8,7 +8,7 @@ Work the phases in order. Tick each task as it lands, and only start the next ph
 | --- | --- | --- | --- |
 | 1 | Toggle mode plumbing | 5 min | Done |
 | 2 | Persistence and no-flash init | 3 min | Done |
-| 3 | Palette and tokens | 6 min | Not started |
+| 3 | Palette and tokens | 6 min | Done |
 | 4 | Rainbow decoration | 5 min | Not started |
 | 5 | Verify and finish | 6 min | Not started |
 
@@ -42,11 +42,11 @@ Exit check: reloading in Unicorn mode keeps it with no flash, and Auto, Light an
 
 Files: `apps/web/src/styles.css`
 
-- [ ] Add a `.unicorn` block overriding `--background`, `--card`, `--primary`, `--accent`, `--border`, their foregrounds and `--ring`
-- [ ] Choose pastel pink, lilac and mint values
-- [ ] Define the rainbow gradient custom property
-- [ ] Define a softer pastel gradient for the page background
-- [ ] Check contrast (WCAG AA) for body text, muted text and primary button text
+- [x] Add a `.unicorn` block overriding `--background`, `--card`, `--primary`, `--accent`, `--border`, their foregrounds and `--ring`
+- [x] Choose pastel pink, lilac and mint values
+- [x] Define the rainbow gradient custom property
+- [x] Define a softer pastel gradient for the page background
+- [x] Check contrast (WCAG AA) for body text, muted text and primary button text
 
 Exit check: Unicorn shows readable pastel surfaces on Home, About and Notes. No gradients applied yet.
 
