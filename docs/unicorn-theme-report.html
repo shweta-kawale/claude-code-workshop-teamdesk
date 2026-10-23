@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Unicorn theme report</title>
+    <style>
+    :root {
+      --bg: #faf9f5;
+      --fg: #181818;
+      --muted: #6b6862;
+      --card: #fff;
+      --line: #e3e1d8;
+      --accent: #b35434;
+      --rainbow: linear-gradient(
+        90deg,
+        #ff9ec7 0%,
+        #ffc58a 20%,
+        #fff09a 40%,
+        #a8f0c4 60%,
+        #9fd8ff 80%,
+        #c7a8ff 100%
+      );
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #181818;
+        --fg: #faf9f5;
+        --muted: #a19d96;
+        --card: #222120;
+        --line: #3a3835;
+        --accent: #e08b6e;
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font:
+        16px / 1.55 system-ui,
+        sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+    }
+    main {
+      width: min(880px, calc(100% - 2rem));
+      padding: 0 0 4rem;
+      margin: 0 auto;
+    }
+    .band {
+      height: 14px;
+      background: var(--rainbow);
+    }
+    h1 {
+      margin: 2rem 0 0.4rem;
+      font:
+        400 2.4rem / 1.15 Georgia,
+        serif;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 2.5rem 0 0.8rem;
+      font:
+        400 1.5rem / 1.2 Georgia,
+        serif;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+    .kicker {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .card {
+      padding: 1rem 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    table {
+      width: 100%;
+      overflow: hidden;
+      font-size: 0.93rem;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    th,
+    td {
+      padding: 0.55rem 0.8rem;
+      vertical-align: top;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+    tr:last-child td {
+      border-bottom: 0;
+    }
+    th {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    code {
+      padding: 0.05rem 0.35rem;
+      font-size: 0.85em;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .cycle {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .pill {
+      padding: 0.3rem 0.9rem;
+      font-size: 0.9rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+    .pill.u {
+      color: #2d2340;
+      background: var(--rainbow);
+      border-color: transparent;
+    }
+    .sw {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.6rem;
+    }
+    .sw div {
+      overflow: hidden;
+      font-size: 0.78rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .sw i {
+      display: block;
+      height: 44px;
+    }
+    .sw span {
+      display: block;
+      padding: 0.35rem 0.55rem;
+      color: var(--muted);
+    }
+    .grad {
+      height: 56px;
+      margin: 0.4rem 0 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .ok {
+      font-weight: 600;
+      color: #2f7d57;
+    }
+    @media (prefers-color-scheme: dark) {
+      .ok {
+        color: #7fd1a8;
+      }
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.4rem 0;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="band"></div>
+    <main>
+      <p class="kicker">Teamdesk</p>
+      <h1>Unicorn theme report</h1>
+      <p class="lead">
+        A fourth mode on the existing theme switcher: a light base with pastel
+        pink, lilac and mint surfaces, a rainbow header and rainbow primary
+        buttons. Built in five phases from
+        <code>docs/specs/unicorn-theme-phases.md</code>.
+      </p>
+
+      <h2>Outcome</h2>
+      <div class="card">
+        <p>
+          <span class="ok">Done.</span>
+          All spec acceptance criteria pass. <code>bun test</code> passes (55
+          pass, 1 skip, 0 fail) and <code>bun run check</code> passes. Nothing
+          has been deployed.
+        </p>
+      </div>
+
+      <h2>How it behaves</h2>
+      <div class="cycle">
+        <span class="pill">Auto</span>
+        &rarr; <span class="pill">Light</span> &rarr;
+        <span class="pill">Dark</span> &rarr;
+        <span class="pill u">Unicorn (sparkle icon)</span> &rarr;
+        <span class="pill">Auto</span>
+      </div>
+      <ul>
+        <li>
+          The choice is stored in <code>localStorage</code> under
+          <code>theme</code> as <code>unicorn</code>.
+        </li>
+        <li>
+          The init script in <code>__root.tsx</code> applies it before first
+          paint, so a reload shows no flash.
+        </li>
+        <li>
+          Unicorn keeps the <code>light</code> class and adds
+          <code>unicorn</code> and <code>data-theme="unicorn"</code>. Auto only
+          ever resolves to light or dark.
+        </li>
+        <li>Unknown stored values fall back to <code>auto</code>.</li>
+      </ul>
+
+      <h2>Palette</h2>
+      <div class="sw">
+        <div>
+          <i style="background:#fdf4fa"></i><span>Background #fdf4fa</span>
+        </div>
+        <div><i style="background:#fffafd"></i><span>Card #fffafd</span></div>
+        <div>
+          <i style="background:#f48fc2"></i><span>Primary #f48fc2</span>
+        </div>
+        <div>
+          <i style="background:#ece4fb"></i><span>Secondary #ece4fb</span>
+        </div>
+        <div><i style="background:#d3f3e4"></i><span>Accent #d3f3e4</span></div>
+        <div><i style="background:#e6d3ee"></i><span>Border #e6d3ee</span></div>
+        <div><i style="background:#b57fd9"></i><span>Ring #b57fd9</span></div>
+        <div><i style="background:#2d2340"></i><span>Text #2d2340</span></div>
+      </div>
+      <p style="margin-top:1rem">
+        <code>--unicorn-rainbow</code>
+        (header, primary buttons)
+      </p>
+      <div class="grad" style="background:var(--rainbow)"></div>
+      <p><code>--unicorn-pastel</code> (page background)</p>
+      <div
+        class="grad"
+        style="background:linear-gradient(135deg,#fdf4fa 0%,#f3e8fd 50%,#e6f7f0 100%)"
+      ></div>
+
+      <h2>Contrast (WCAG AA needs 4.5:1)</h2>
+      <table>
+        <tr>
+          <th>Pair</th>
+          <th>Ratio</th>
+        </tr>
+        <tr>
+          <td>Text on background</td>
+          <td>13.67</td>
+        </tr>
+        <tr>
+          <td>Card text on card</td>
+          <td>14.27</td>
+        </tr>
+        <tr>
+          <td>Muted text on background</td>
+          <td>5.76</td>
+        </tr>
+        <tr>
+          <td>Primary button text on primary</td>
+          <td>6.70</td>
+        </tr>
+        <tr>
+          <td>Primary button text on the lowest rainbow stop (lilac)</td>
+          <td>7.34</td>
+        </tr>
+        <tr>
+          <td>Label text on background</td>
+          <td>5.90</td>
+        </tr>
+      </table>
+
+      <h2>Phases and commits</h2>
+      <table>
+        <tr>
+          <th>Phase</th>
+          <th>What changed</th>
+          <th>Commit</th>
+        </tr>
+        <tr>
+          <td>1 Toggle plumbing</td>
+          <td>
+            <code>theme-toggle.tsx</code>: mode, cycle, label, icon, classes
+          </td>
+          <td><code>696e087</code></td>
+        </tr>
+        <tr>
+          <td>2 No-flash init</td>
+          <td><code>__root.tsx</code>: init script</td>
+          <td><code>fff6a2a</code></td>
+        </tr>
+        <tr>
+          <td>3 Palette and tokens</td>
+          <td>
+            <code>styles.css</code>: <code>.unicorn</code> tokens and gradient
+            properties
+          </td>
+          <td><code>6262485</code></td>
+        </tr>
+        <tr>
+          <td>4 Rainbow decoration</td>
+          <td><code>styles.css</code>: header, buttons, background</td>
+          <td><code>220ddb8</code></td>
+        </tr>
+        <tr>
+          <td>5 Verify and finish</td>
+          <td>Tracker ticked, browser checks</td>
+          <td><code>4aa66e8</code></td>
+        </tr>
+        <tr>
+          <td>Follow-up</td>
+          <td>Tracker note that <code>bun run check</code> needs Node</td>
+          <td><code>7b6447f</code></td>
+        </tr>
+      </table>
+
+      <h2>Acceptance criteria</h2>
+      <table>
+        <tr>
+          <th>Criterion</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>
+            Button cycles Auto, Light, Dark, Unicorn, Auto with the right icon
+            and label
+          </td>
+          <td class="ok">Pass (checked in the browser)</td>
+        </tr>
+        <tr>
+          <td>Reload in Unicorn keeps it, no flash</td>
+          <td class="ok">
+            Pass (init script checked for all stored values; reload checked in
+            the browser)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Rainbow header, rainbow primary buttons, pastel background, sparkle
+            icon
+          </td>
+          <td class="ok">Pass (computed styles and screenshots)</td>
+        </tr>
+        <tr>
+          <td>Readable contrast on pastel surfaces</td>
+          <td class="ok">Pass (all text pairs at least 4.5:1)</td>
+        </tr>
+        <tr>
+          <td>Light, Dark and Auto unchanged</td>
+          <td class="ok">
+            Pass (no gradients in Light or Dark; every rule scoped under
+            <code>.unicorn</code>)
+          </td>
+        </tr>
+        <tr>
+          <td><code>bun run check</code> and <code>bun test</code></td>
+          <td class="ok">Pass</td>
+        </tr>
+      </table>
+
+      <h2>Changes from the plan</h2>
+      <ul>
+        <li>
+          The button <code>aria-label</code> now names the next mode, for
+          example "Click to switch to unicorn mode".
+        </li>
+        <li>
+          The header uses a 30% white wash over the rainbow and dark plum nav
+          links, so both options in the plan were applied.
+        </li>
+        <li>
+          Rainbow buttons get a small brightness and saturation lift on hover,
+          because the existing hover colour is hidden under the gradient.
+        </li>
+        <li>
+          The decoration rules sit in a block at the end of
+          <code>styles.css</code> to satisfy the linter's specificity rule.
+        </li>
+        <li>
+          The <code>.unicorn</code> block also themes popover, secondary, muted,
+          input, sidebar and chart tokens, so the whole UI is covered.
+        </li>
+        <li>
+          <code>bun run check</code>
+          failed on the baseline because Node was not installed: wrangler ran
+          under Bun and wrote an HTML page into
+          <code>worker-configuration.d.ts</code>. Installing Node (with
+          approval) fixed it.
+        </li>
+      </ul>
+
+      <h2>Not done</h2>
+      <ul>
+        <li>Not deployed. The spec says to deploy only on request.</li>
+        <li>
+          The toaster and charts were not inspected in Unicorn mode. They use
+          the light theme, which Unicorn keeps.
+        </li>
+        <li>
+          The unrelated <code>apps/web/wrangler.jsonc</code> change (real D1
+          database ID) is still uncommitted.
+        </li>
+      </ul>
+
+      <h2>Process</h2>
+      <p>
+        Haiku subagents did Phases 1 and 2 and Sonnet subagents did Phases 3 and
+        4. The controller reviewed each diff, committed at every phase boundary,
+        ran the browser verification and diagnosed the typegen failure.
+      </p>
+    </main>
+  </body>
+</html>
